@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I Just make it for my love, di ka makakalogin dyan HAHAHAH">
+    <meta name="keywords" content="Monthsary">
+    <meta name="author" content="Jhon Mark L. Lumibao">
+    <title>CUTE LOGIN</title>
+    <link rel="stylesheet" href="intro-styles.css">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CUTE LOGIN - Made with Love 💜">
+    <meta property="og:description" content="A special login page just for my love, di ka makakalogin dyan HAHAHAH">
+    <meta property="og:image" content="https://raw.githubusercontent.com/lumibao/Meow/main/download.jpg"> <!-- Replace with the URL of your image -->
+    <meta property="og:url" content="https://lumibao.github.io/Meow"> <!-- Replace with your webpage URL -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Monthsary Surprise">
+
+    <!-- Twitter Card Meta Tags (Optional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CUTE LOGIN - Made with Love 💜">
+    <meta name="twitter:description" content="A special login page just for my love, di ka makakalogin dyan HAHAHAH">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/lumibao/Meow/main/download.jpg"> <!-- Replace with the URL of your image -->
+
+    <style>
+        .neon-heart {
+            filter: drop-shadow(0 0 10px #800080) drop-shadow(0 0 20px #800080);
+        }
+
+        /* Overlay for post-login animation */
+        .login-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #8A2BE2;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .login-overlay.visible {
+            visibility: visible;
+            opacity: 1;
+            animation: slideUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-image-container">
+            <!-- Neon Purple Heart SVG -->
+            <svg class="neon-heart" width="100" height="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#800080"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-screen" class="login-screen hidden">
+        <div class="login-container">
+            <h1>Log in ka muna</h1>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Log in</button>
+                <div id="error-message" class="hidden">The username and password you entered is wrong. Hinge ka pass kay Zuri or Jm</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay for animation after login -->
+    <div id="login-overlay" class="login-overlay hidden"></div>
+
+    <script src="intro-script.js"></script>
+</body>
+</html>

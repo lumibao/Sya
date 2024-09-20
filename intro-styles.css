@@ -1,0 +1,210 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #141414; /* Dark background to enhance neon effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* Splash Screen Styles */
+.splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(440cfbc8d040ebabc692b8f03bc91cac.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeOut 2s forwards;
+}
+
+.splash-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+}
+
+.splash-image {
+    width: 200px;
+    height: 200px;
+    animation: scaleIn 1s ease-out; /* Subtle scaling effect */
+}
+
+/* Neon Heart SVG Styling */
+.neon-heart {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    filter: drop-shadow(0 0 10px #8A2BE2) drop-shadow(0 0 20px #8A2BE2);
+    animation: pop 1.5s ease-in-out; /* Animation for popping effect */
+}
+
+/* Login Screen Styles */
+.login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(Simple-Black-and-White-Cat-Background.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.login-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    max-width: 360px;
+    width: 100%;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-out;
+    backdrop-filter: blur(15px); /* Enhanced blur effect */
+    border: 2px solid rgba(138, 43, 226, 0.8); /* Neon border with opacity */
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.7), 0 0 30px rgba(138, 43, 226, 0.9); /* Neon shadow */
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #8A2BE2;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards;
+    text-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2; /* Neon glow effect */
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container input {
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid #8A2BE2;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(30, 30, 30, 0.9);
+    color: #fff;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 0 5px #8A2BE2;
+}
+
+.login-container input:focus {
+    border-color: #7A1FC2;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px #8A2BE2;
+}
+
+.login-container button {
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: #8A2BE2;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    text-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2;
+}
+
+.login-container button:hover {
+    background-color: #7A1FC2;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #8A2BE2;
+}
+
+#error-message {
+    color: #e0245e;
+    margin-top: 10px;
+    font-size: 0.875rem;
+    text-shadow: 0 0 10px #e0245e, 0 0 20px #e0245e;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Overlay for post-login animation */
+.login-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8A2BE2;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.login-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+    animation: slideUp 1s ease-out forwards;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px #8A2BE2) drop-shadow(0 0 20px #8A2BE2);
+    }
+    50% {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 15px #8A2BE2) drop-shadow(0 0 25px #8A2BE2);
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px #8A2BE2) drop-shadow(0 0 20px #8A2BE2);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
